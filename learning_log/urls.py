@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("", views.index, name="topic"),
+    path("topics", views.index, name="topic"),
     path("topics/<int:topic_id>/", views.topic, name="topic"),
-
+    path("new_topic/", views.index, name="new_topic"),
 ]
